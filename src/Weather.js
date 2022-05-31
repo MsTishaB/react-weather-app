@@ -3,26 +3,28 @@ import "./Weather.css";
 import axios from "axios";
 
 export default function Weather() {
-	const [temperature, setTemperature] = useState(null);
-	const [ready, setReady] = useState(false);
-	const [weatherInfo, setWeatherInfo] = useState({});
+	const [weatherInfo, setWeatherInfo] = useState({ ready: false });
 
 	function handleResponse(response) {
 		console.log(response.data);
-		setTemperature(Math.round(response.data.main.temp));
-		setReady(true);
+		
 		setWeatherInfo({
+            ready: true;
 			city: response.data.name,
 			temperature: Math.round(response.data.main.temp),
 			humidity: response.data.main.humidity,
 			description: response.data.weather[0].description,
+			date: "Wednesday 12:13 am",
+			sunrise: "4:30 am",
+			sunset: "10:20pm",
+
 			wind: Math.round(response.data.wind.speed),
-			iconID: response.data.weather[0].icon,
+			iconUrl: "https://www.svgrepo.com/show/212029/rain-weather.svg",
 			feels_like: Math.round(response.data.main.feels_like),
 		});
 	}
 
-	if (ready) {
+	if (weatherInfo.ready) {
 		return (
 			<div className="Weather">
 				<form>
@@ -46,7 +48,7 @@ export default function Weather() {
 						<h1>{weatherInfo.city}</h1>
 					</div>
 					<div className="col-9">
-						<h4>As of 10:48 pm</h4>
+						<h4>As of {weatherInfo.date}</h4>
 					</div>
 				</div>
 				<div className="row">
@@ -54,12 +56,12 @@ export default function Weather() {
 						<h2>
 							{weatherInfo.temperature}° <a href="/">C</a> | <a href="/">F</a>
 						</h2>
-						<h3>{weatherInfo.description}</h3>
+						<h3 className="text-capitalize">{weatherInfo.description}</h3>
 					</div>
 					<div className="col-6">
 						<img
-							src="https://www.svgrepo.com/show/212029/rain-weather.svg"
-							alt="rainy weather icon"
+							src={weatherInfo.iconUrl}
+							alt={weatherInfo.description}
 							className="weather-icon"
 						/>
 					</div>
@@ -77,8 +79,8 @@ export default function Weather() {
 							className="sunrise"
 						/>
 						<ul>
-							<li>Sunrise 4:30 am </li>
-							<li>Sunset 10:20pm</li>
+							<li>Sunrise {weatherInfo.sunrise} </li>
+							<li>Sunset {weatherInfo.sunset}</li>
 						</ul>
 					</div>
 				</div>
