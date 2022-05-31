@@ -1,0 +1,15 @@
+img {
+	width: 150px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+.sunrise img {
+	width: 500 px;
+}
+
+.location {
+	background-color: rgba(255, 255, 255, 0.5);
+}
