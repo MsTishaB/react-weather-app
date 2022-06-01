@@ -4,8 +4,11 @@
 		rgb(144, 17, 105) 0%,
 		rgb(51, 0, 131) 100.2%
 	);
+
+	font-family: "Roboto", sans-serif;
 }
 
 .App footer {
-	text-align: right;
+	text-align: center;
+	color: white;
 }

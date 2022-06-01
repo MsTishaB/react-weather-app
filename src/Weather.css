@@ -1,9 +1,8 @@
 .Weather {
 	color: rgb(255, 255, 255);
 	display: block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-		Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	max-width: 900px;
+	font-family: "Roboto", sans-serif;
+	max-width: 700px;
 	line-height: 24px;
 	margin: 0 auto;
 	padding-bottom: 10px;
@@ -16,12 +15,11 @@
 
 .Weather canvas {
 	width: 100px;
-	margin: 5px;
 }
 .Weather h1 {
 	line-height: 30px;
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 .Weather h4 {
@@ -39,38 +37,22 @@
 	line-height: 1.2;
 	font-weight: 600;
 }
-.Weather .feels-like {
-	font-size: 56px;
-	font-weight: 600;
-	margin-left: 20px;
-}
 
-.Weather .feels-like-label {
-	margin-left: 20px;
-	font-size: 16px;
-}
-
-.Weather .sunrise {
-	display: block;
-
-	width: 100px;
-}
-
-.Weather .weather-detail-icons {
-	width: 24px;
-	display: inline;
-}
 .Weather .weather-info {
 	border-radius: 6px;
-	background-color: grey;
+	background-color: RGB(217, 217, 214, 0.3);
 	padding: 0px 12px 10px 12px;
 }
 .Weather h3 {
 	font-size: 30px;
 }
 
+.Weather p {
+	font-size: 20px;
+	line-height: 1.5;
+}
 .Weather .date {
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .Weather .current-temp {
@@ -82,5 +64,6 @@
 }
 
 .Weather .description {
-	font-size: 24px;
+	font-size: 36px;
+	margin-left: 20px;
 }
