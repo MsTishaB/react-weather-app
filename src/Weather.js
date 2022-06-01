@@ -9,7 +9,7 @@ export default function Weather(props) {
 	const [city, setCity] = useState("Berlin");
 
 	function handleResponse(response) {
-		console.log(new Date(response.data.sys.sunrise * 1000));
+		console.log(response.data.weather[0].icon);
 		setWeatherInfo({
 			ready: true,
 			city: response.data.name,
@@ -17,11 +17,9 @@ export default function Weather(props) {
 			humidity: response.data.main.humidity,
 			description: response.data.weather[0].description,
 			date: new Date(response.data.dt * 1000),
-			sunrise: "4 am",
-			sunset: "10:20pm",
 
 			wind: Math.round(response.data.wind.speed),
-			iconUrl: "https://www.svgrepo.com/show/212029/rain-weather.svg",
+			icon: response.data.weather[0].icon,
 			feels_like: Math.round(response.data.main.feels_like),
 		});
 	}
@@ -49,7 +47,7 @@ export default function Weather(props) {
 		return (
 			<div className="Weather">
 				<div>
-					<form onSubmit={handleSubmit}>
+					<form className="mt-3" onSubmit={handleSubmit}>
 						<div className="row mb-5">
 							<div className="col-10">
 								<input

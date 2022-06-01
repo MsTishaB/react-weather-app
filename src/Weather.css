@@ -14,8 +14,9 @@
 	text-size-adjust: 100%;
 }
 
-.Weather .weather-icon {
+.Weather canvas {
 	width: 100px;
+	margin: 5px;
 }
 .Weather h1 {
 	line-height: 30px;
