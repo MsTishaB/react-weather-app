@@ -3,8 +3,9 @@
 	display: block;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
 		Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-
+	max-width: 900px;
 	line-height: 24px;
+	margin: 0 auto;
 	padding-bottom: 10px;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -21,13 +22,43 @@
 	font-weight: 500;
 	font-size: 20px;
 }
+
+.Weather h4 {
+	line-height: 30px;
+}
 .Weather .header {
 	background-color: rgba(0, 0, 0, 0.55);
-	padding: 10px 16px;
+
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 }
 
+.Weather .sub-header {
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: 600;
+}
+.Weather .feels-like {
+	font-size: 56px;
+	font-weight: 600;
+	margin-left: 20px;
+}
+
+.Weather .feels-like-label {
+	margin-left: 20px;
+	font-size: 16px;
+}
+
+.Weather .sunrise {
+	display: block;
+
+	width: 100px;
+}
+
+.Weather .weather-detail-icons {
+	width: 24px;
+	display: inline;
+}
 .Weather .weather-info {
 	border-radius: 6px;
 	background-color: grey;

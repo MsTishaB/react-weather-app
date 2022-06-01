@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 export default function Weather(props) {
 	const [weatherInfo, setWeatherInfo] = useState({ ready: false });
 
 	function handleResponse(response) {
-		console.log(response.data);
-
+		console.log(new Date(response.data.sys.sunrise * 1000));
 		setWeatherInfo({
 			ready: true,
 			city: response.data.name,
 			temperature: Math.round(response.data.main.temp),
 			humidity: response.data.main.humidity,
 			description: response.data.weather[0].description,
-			date: "Wednesday 12:13 am",
-			sunrise: "4:30 am",
+			date: new Date(response.data.dt * 1000),
+			sunrise: "4 am",
 			sunset: "10:20pm",
 
 			wind: Math.round(response.data.wind.speed),
@@ -46,11 +46,13 @@ export default function Weather(props) {
 					</form>
 					<div className="weather-info">
 						<div className="row header">
-							<div className="col-3">
+							<div className="col-1">
 								<h1>{weatherInfo.city}</h1>
 							</div>
-							<div className="col-9">
-								<h4 className="date">As of {weatherInfo.date}</h4>
+							<div className="col-11">
+								<h4 className="date">
+									<FormattedDate date={weatherInfo.date} />
+								</h4>
 							</div>
 						</div>
 						<div className="row">
@@ -75,39 +77,29 @@ export default function Weather(props) {
 							</div>
 						</div>
 						<div className="row">
-							<h4> Weather Today in {weatherInfo.city}</h4>
 							<div className="col-6">
-								<h2>{weatherInfo.feels_like}°</h2>
-								<p>Feels Like</p>
+								<h2 className="feels-like">{weatherInfo.feels_like}°</h2>
+								<p className="feels-like-label">Feels Like</p>
 							</div>
-							<div className="col-6">
-								<img
-									src="https://www.svgrepo.com/show/56930/sunset.svg"
-									alt="sunrise and sunset icon"
-									className="sunrise"
-								/>
-								<ul>
-									<li>Sunrise {weatherInfo.sunrise} </li>
-									<li>Sunset {weatherInfo.sunset}</li>
-								</ul>
-							</div>
+							<div className="col-6"></div>
 						</div>
 						<div className="row">
-							<div className="col-3">
+							<div className="col-6">
 								<img
 									src="https://cdn.onlinewebfonts.com/svg/img_285841.svg"
 									alt="humidity icon"
+									className="weather-detail-icons"
 								/>{" "}
-								Humidity
+								<span>Humidity {weatherInfo.humidity} %</span>
 							</div>
-							<div className="col-3">{weatherInfo.humidity} %</div>
-							<div className="col-3">
+
+							<div className="col-6">
 								<img
 									src="http://cdn.onlinewebfonts.com/svg/img_540230.png"
 									alt="wind icon"
+									className="weather-detail-icons"
 								/>{" "}
-								Wind
-								<div className="col-3">{weatherInfo.wind}km/h</div>
+								<span>Wind {weatherInfo.wind}km/h</span>
 							</div>
 						</div>
 					</div>
