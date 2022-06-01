@@ -9,7 +9,6 @@ export default function Weather(props) {
 	const [city, setCity] = useState("Berlin");
 
 	function handleResponse(response) {
-		console.log(response.data.weather[0].icon);
 		setWeatherInfo({
 			ready: true,
 			city: response.data.name,
