@@ -17,7 +17,7 @@ export default function WeatherData(props) {
 				</div>
 			</div>
 			<div className="row">
-				<div className="col-7">
+				<div className="col-8">
 					<div className="row">
 						{" "}
 						<div className="col-3 ">
@@ -33,13 +33,16 @@ export default function WeatherData(props) {
 						</div>
 					</div>
 					<div className="row">
-						<h3 className="text-capitalize description">
-							{props.data.description}
-						</h3>
+						<div className="col-3"></div>
+						<div className="col-9">
+							<h3 className="text-capitalize description">
+								{props.data.description}
+							</h3>
+						</div>
 					</div>
 				</div>
 
-				<div className="col-5">
+				<div className="col-4">
 					<div className="row">
 						<p className="mt-3 border-bottom">
 							Feels Like {props.data.feels_like}°

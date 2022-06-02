@@ -16,15 +16,12 @@ export default function WeatherTemperature(props) {
 	if (unit === "metric") {
 		return (
 			<div className=" row WeatherTemperature">
-				<div className="col-6">
-					<h2 className="current-temp">{props.celsius}°C </h2>
+				<div className="col-5">
+					<h2 className="current-temp">{props.celsius}° </h2>
 				</div>
-				<div className="col-6 mt-3">
+				<div className="col-7 mt-3">
 					<span className="temp-unit">
-						<a onClick={convertToMetric} href="/">
-							C
-						</a>{" "}
-						|{" "}
+						C |{" "}
 						<a onClick={convertToImperial} href="/">
 							F
 						</a>
@@ -35,17 +32,17 @@ export default function WeatherTemperature(props) {
 	} else {
 		return (
 			<div className=" row WeatherTemperature">
-				<div className="col-6">
-					<h2 className="current-temp">
-						{Math.round(props.celsius * (3 / 2) + 32.2)}°F{" "}
+				<div className="col-5">
+					<h2 className="current-temp mt-2">
+						{Math.round(props.celsius * (9 / 5) + 32.2)}°{" "}
 					</h2>
 				</div>
-				<div className="col-6 mt-3">
+				<div className="col-7 mt-3">
 					<span className="temp-unit">
-						<a href="/">C</a> |{" "}
-						<a onClick={convertToImperial} href="/">
-							F
-						</a>
+						<a onClick={convertToMetric} href="/">
+							C
+						</a>{" "}
+						| F
 					</span>
 				</div>
 			</div>
