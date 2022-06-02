@@ -57,6 +57,7 @@
 
 .Weather .current-temp {
 	font-size: 96px;
+	display: inline;
 }
 
 .Weather .temp-unit {
