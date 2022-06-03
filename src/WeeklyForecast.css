@@ -1,0 +1,20 @@
+.WeeklyForecast h5 {
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.WeeklyForecast .col {
+	text-align: center;
+}
+
+.WeeklyForecast {
+	background-color: RGB(217, 217, 214, 0.3);
+	margin-top: 40px;
+	padding-top: 12px;
+	padding-bottom: 5px;
+	border-radius: 6px;
+}
+
+.WeeklyForecast canvas {
+	width: 65px;
+}
