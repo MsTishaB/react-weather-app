@@ -10,6 +10,7 @@ export default function Weather(props) {
 	const [city, setCity] = useState("Berlin");
 
 	function handleResponse(response) {
+		console.log(response.data.coord.lon);
 		setWeatherInfo({
 			ready: true,
 			city: response.data.name,
@@ -17,7 +18,7 @@ export default function Weather(props) {
 			humidity: response.data.main.humidity,
 			description: response.data.weather[0].description,
 			date: new Date(response.data.dt * 1000),
-
+			coordinates: response.data.coord,
 			wind: Math.round(response.data.wind.speed),
 			icon: response.data.weather[0].icon,
 			feels_like: Math.round(response.data.main.feels_like),
@@ -65,7 +66,7 @@ export default function Weather(props) {
 						</div>
 					</form>
 					<WeatherData data={weatherInfo} />
-					<WeeklyForecast />
+					<WeeklyForecast coordinates={weatherInfo.coordinates} />
 				</div>
 			</div>
 		);
