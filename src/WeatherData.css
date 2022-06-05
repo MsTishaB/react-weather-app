@@ -1,0 +1,41 @@
+.WeatherData {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	background-color: RGB(217, 217, 214, 0.3);
+	padding: 0px 12px 10px 12px;
+}
+
+.WeatherData .date {
+	font-size: 16px;
+}
+
+.WeatherData h1 {
+	line-height: 30px;
+	font-weight: 500;
+	font-size: 30px;
+}
+
+.WeatherData h3 {
+	font-size: 30px;
+}
+
+.WeatherData p {
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.WeatherData .header {
+	background-color: rgba(0, 0, 0, 0.55);
+
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.WeatherData h4 {
+	line-height: 30px;
+}
+
+.WeatherData .description {
+	font-size: 36px;
+	margin-left: 20px;
+}

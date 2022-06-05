@@ -4,10 +4,10 @@
 
 .WeeklyForecast {
 	background-color: RGB(217, 217, 214, 0.3);
-	margin-top: 40px;
-	padding-top: 12px;
+	padding-top: 15px;
 	padding-bottom: 5px;
-	border-radius: 6px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
 }
 
 .WeeklyForecast canvas {

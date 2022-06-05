@@ -34,8 +34,6 @@ export default function Weather(props) {
 
 	function updateCity(event) {
 		setCity(event.target.value);
-
-		console.log(city);
 	}
 
 	function handleSubmit(event) {

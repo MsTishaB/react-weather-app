@@ -28,6 +28,8 @@ export default function WeeklyForecast(props) {
 									<WeatherForecastDay forecastData={dailyForecast} />
 								</div>
 							);
+						} else {
+							return null;
 						}
 					})}
 				</div>
@@ -38,7 +40,7 @@ export default function WeeklyForecast(props) {
 		let latitude = props.coordinates.lat;
 		let longitude = props.coordinates.lon;
 		let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-		console.log(apiURL);
+
 		axios.get(apiURL).then(getForecast);
 		return "Null";
 	}

@@ -1,0 +1,8 @@
+.WeatherTemperature .current-temp {
+	font-size: 88px;
+	display: inline;
+}
+
+.WeatherTemperature .temp-unit {
+	font-size: 20px;
+}
