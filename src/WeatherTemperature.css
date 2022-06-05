@@ -4,5 +4,6 @@
 }
 
 .WeatherTemperature .temp-unit {
-	font-size: 20px;
+	font-size: 70px;
+	display: inline;
 }
