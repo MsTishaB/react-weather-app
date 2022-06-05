@@ -13,6 +13,15 @@ export default function WeeklyForecast(props) {
 		setLoaded(true);
 	}
 
+	function load() {
+		let apiKey = "d8fe934ca304760817a770ff2bea2019";
+		let latitude = props.coordinates.lat;
+		let longitude = props.coordinates.lon;
+		let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+		axios.get(apiURL).then(getForecast);
+	}
+
 	useEffect(() => {
 		setLoaded(false);
 	}, [props.coordinates]);
@@ -36,12 +45,7 @@ export default function WeeklyForecast(props) {
 			</div>
 		);
 	} else {
-		let apiKey = "d8fe934ca304760817a770ff2bea2019";
-		let latitude = props.coordinates.lat;
-		let longitude = props.coordinates.lon;
-		let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-		axios.get(apiURL).then(getForecast);
+		load();
 		return "Null";
 	}
 }
